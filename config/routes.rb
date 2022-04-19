@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   # get "bookmarks/new", to: "bookmarks#new"
   # post "bookmarks", to: "bookmarks#create"
-  resources :lists, only: [:index, :new, :show, :create, :destroy] do
+  root to: 'lists#index'
+  resources :lists, only: [ :new, :show, :create, :destroy] do
     resources :bookmarks, only: [:new, :create, :show]
   end
   resources :bookmarks, only: [:destroy]

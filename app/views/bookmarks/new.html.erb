@@ -1,7 +1,5 @@
-<div style="margin: 24px;">
-
-<%= simple_form_for [ @bookmark, @list ] do |f| %>
-<%= f.input :comment %>
-<%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
-</div>
+ <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+          <%= f.association :movie, prompt: 'Select a movie', input_html: { data: { controller: 'select2' } %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>

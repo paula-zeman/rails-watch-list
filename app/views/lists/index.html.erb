@@ -1,0 +1,17 @@
+
+<div style="margin: 24px;">
+  <h2>Movie Lists</h2>
+
+<div> <h3><%= link_to "New List", new_list_path %></h3>
+</div>
+
+<div style="margin: 24px;">
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ul>
+
+
+</div>
+</div>
